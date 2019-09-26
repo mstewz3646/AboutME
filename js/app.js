@@ -56,6 +56,34 @@ function startGame(){
     numberGame();
 }
 
+startGame();
+
 function numberGame(){
 
+    alert('Let\'s play a game about the age of Matt! Please enter a number between 18 and 45 to guess Matt\'s age!');
+
+    var actualAge = 37;
+    var attempts = 1;
+
+    var guessAge = parseInt(prompt('So, what is your first guess?'));
+    while (attempts < 4){
+        if (guessAge === actualAge){
+            alert('Wow! Somehow you guessed Matt\'s age! Congrats!');
+            break;
+        }
+    
+        if (guessAge !== actualAge){
+            if (guessAge > actualAge){
+                guessAge = prompt('Sorry, you guessed too high. Please try again!');
+                attempts++;
+            }
+        
+        
+            if (guessAge < actualAge){
+                guessAge = prompt('Sorry, you guessed too low! Please try again!');
+                attempts++;
+            }
+        }
+    }
+    alert('Sorry, you\'ve ran out of attempts! The age of Matt is ' + actualAge);
 }
