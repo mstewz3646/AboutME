@@ -53,4 +53,9 @@ function allBio(){
 
 function startGame(){
     allBio();
+    numberGame();
+}
+
+function numberGame(){
+
 }
