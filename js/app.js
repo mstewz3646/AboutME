@@ -1,15 +1,16 @@
 'use strict';
 
-function allBio(){
-    var username = prompt('May I have your name please?');
+var username = prompt('May I have your name please?');
     console.log('this is a username inputted: ' + username);
 
+function allBio(){
+    
     alert('Hello ' + username + '! Welcome to Matt\'s little website! Now it is time for a quiz regarding Matt!');
 
 
     var CityBorn = prompt('First question ' + username + ', "yes" or "no": Matt was born in Redding, California.');
 
-    if (CityBorn === 'no' ) {
+    if (CityBorn.toLowerCase() === 'no' ) {
         alert('You are correct!');
     } else {
         alert('Nope, unfortunately you are incorrect.');
@@ -17,7 +18,7 @@ function allBio(){
 
     var CollegeCity = prompt('Second question, and please answer with a "yes" or "no" ' + username + ': after high school Matt moved to Chico.');
 
-    if (CollegeCity === 'yes' ) {
+    if (CollegeCity.toLowerCase() === 'yes' ) {
         alert('You got it!');
     } else {
         alert('That is NOT the correct answer. Sorry!');
@@ -25,7 +26,7 @@ function allBio(){
 
     var SantaBarbara = prompt('Third question, and again, please answer with a "yes" or "no", ' + username + ': after living in Chico and having to move back in with his parents, Matt moved to Santa Barbara.');
 
-    if (SantaBarbara === 'yes' ) {
+    if (SantaBarbara.toLowerCase() === 'yes' ) {
         alert('You are a genius and gave the correct answer.');
     } else {
         alert('I am sorry to inform you that you are incorrect.');
@@ -33,7 +34,7 @@ function allBio(){
 
     var GraphicDesign = prompt('Fourth question and thanks for playing along. Please respond with a "yes" or "no", ' + username + ': after moving to San Franciso, Matt majored in 3d Design.');
 
-    if (GraphicDesign === 'no' ) {
+    if (GraphicDesign.toLowerCase === 'no' ) {
         alert('Wow. That one was tricky, you are a superior being.');
     } else {
         alert('I regret to inform you that you have answered this question incorrectly.');
@@ -41,7 +42,7 @@ function allBio(){
 
     var Evil = prompt('Fifth and final question and please answer with a "yes" or "no": the overall goal for Matt is to join forces with evil and conquer the world! Muahahaha!');
 
-    if (Evil === 'no' ) {
+    if (Evil.toLowerCase() === 'no' ) {
         alert('You are correct, he just wants to be happy. :)');
     } else {
         alert('Unfortunatly, you think Matt is an evil being who is trying to conquer the world. As much as you would want Matt to be your evil overlord, he does not want this for you. He just wants to be happy.');
@@ -54,9 +55,8 @@ function allBio(){
 function startGame(){
     allBio();
     numberGame();
+    GuessingGame();
 }
-
-startGame();
 
 function numberGame(){
 
@@ -87,3 +87,26 @@ function numberGame(){
     }
     alert('Sorry, you\'ve ran out of attempts! The age of Matt is ' + actualAge);
 }
+
+function GuessingGame(){
+    
+    alert('Let\'s play one more game, this is a guessing game. Guess which sports Matt played growing up. You have six attempts. What is your first guess?');
+    
+    var sports = ['baseball', 'soccer', 'basketball'];
+    var attempts = 1;
+
+    var guessSport = parseInt(prompt('What is your first guess?'));
+        do (guessSport, i = 0; i < 6; i++);
+
+        while (guessSport === sports)
+            alert('You did it! The possible correct answers are baseball, soccer, or basketball.');
+            break;
+        };
+
+        if (guessSport !== sports){
+            guessSport = prompt('That was not a correct guess. Please try again.');
+            attempts++;
+        }
+}
+
+startGame();

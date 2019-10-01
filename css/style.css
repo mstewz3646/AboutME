@@ -1,6 +1,13 @@
-/* style.css */
+*
 h1 {
     background-color: black;
     color: white;
-    font: sans-serf
+    font: sans-serif;
 }
+
+h2 {
+    background-color: black;
+    color: rgb(175, 171, 171);
+    font: sans-serif;
+}
+
