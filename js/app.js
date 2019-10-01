@@ -95,24 +95,23 @@ function GuessingGame(){
     var correctGuess = false;
 
     while (attempts < 7 && !correctGuess){
-      var guessSport = prompt('Let\'s play one more game, this is a guessing game. Guess which sports Matt played growing up. You have six attempts. What is your first guess?').toLowerCase();
+      var guessSport = prompt('Let\'s play one more game, this is a guessing game. Guess which sports Matt played growing up. You have six attempts. What is your first guess?');
       console.log(`Incorrect attempts: ${attempts - 1}`);
     
       for (var i = 0; i < sports.length - 1; i++){
         
-          if(correctGuess !== sports[i]) {
+        if(correctGuess === sports[i]) {
+          alert('Congrats!' + guessSport + ' is a sport I played!');
+      } 
+        if(correctGuess !== sports[i]) {
             alert('Sorry, that is NOT a sport that Matt played. Please try again.');
         }
-        
-          if(correctGuess === sports[i]) {
-            alert('Congrats!' + guessSport + ' is a sport I played!');
-        }      
+
+        alert('You\'re options were ' + sports + '. Thanks for playing!');    
+
+               
         attempts+=1;
     }
-  }
-
-  for (var i = 0; i <= sports.length - 1; i++){  
-    alert('You\'re options were ' + sports[i] +'. Thanks for playing!');    
   }
 }
 startGame();
