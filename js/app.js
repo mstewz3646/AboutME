@@ -90,23 +90,21 @@ function numberGame(){
 
 function GuessingGame(){
     
-    alert('Let\'s play one more game, this is a guessing game. Guess which sports Matt played growing up. You have six attempts. What is your first guess?');
-    
     var sports = ['baseball', 'soccer', 'basketball'];
-    var attempts = 1;
+    var correctGuess = false;
 
-    var guessSport = parseInt(prompt('What is your first guess?'));
-        do (guessSport, i = 0; i < 6; i++);
+    while (attempts < 7 && correctGuess === false){
+        var guessSport = (prompt('Let\'s play one more game, this is a guessing game. Guess which sports Matt played growing up. You have six attempts. What is your first guess?')).toLowerCase();
 
-        while (guessSport === sports)
-            alert('You did it! The possible correct answers are baseball, soccer, or basketball.');
-            break;
-        };
-
-        if (guessSport !== sports){
-            guessSport = prompt('That was not a correct guess. Please try again.');
-            attempts++;
+    for (var i; i < sports.length - 1; i ++){
+        if(guessSport === sports[i]) {
+        console.log('Congrats!' + guessSport[i] + ' is a sport I played!');
+        correctGuess = true;
+        rightAnswer ++;
         }
+    }
+    attempts+=1;
+}
 }
 
 startGame();
