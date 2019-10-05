@@ -3,11 +3,13 @@ h1 {
     background-color: black;
     color: white;
     font: sans-serif;
+    align-content: center;
 }
 
 h2 {
     background-color: black;
     color: rgb(175, 171, 171);
     font: sans-serif;
+    align-content: center;
 }
 
